@@ -1,6 +1,7 @@
 site_name: Documentacion de Arduino
 theme:
-  palette: 
+  name: material
+  palette:
     # Palette toggle for light mode
     - scheme: default
       toggle:
