@@ -244,9 +244,67 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Variables
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Variables
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#definicion" class="md-nav__link">
+    Definicion
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sintaxis" class="md-nav__link">
+    Sintaxis
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#algunos-detalles" class="md-nav__link">
+    Algunos detalles
+  </a>
+  
+    <nav class="md-nav" aria-label="Algunos detalles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#float-double" class="md-nav__link">
+    float / double
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -321,6 +379,48 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#definicion" class="md-nav__link">
+    Definicion
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sintaxis" class="md-nav__link">
+    Sintaxis
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#algunos-detalles" class="md-nav__link">
+    Algunos detalles
+  </a>
+  
+    <nav class="md-nav" aria-label="Algunos detalles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#float-double" class="md-nav__link">
+    float / double
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -334,6 +434,7 @@
 
 
 <h1 id="variables">Variables</h1>
+<h2 id="definicion">Definicion</h2>
 <p>Las variables son espacios en memoria en los que se pueden guardar determinados tipos de datos.</p>
 <p>Estas son las variables mas usuales que se usan. La extension maxima de las variables aplica al arduino Uno o placas equivalentes (que lleven de CPU un <code>ATMEGA328-P</code>)</p>
 <table>
@@ -348,25 +449,50 @@
 <tr>
 <td><code>int</code></td>
 <td>Recibe / guarda numeros enteros positivos y negativos</td>
-<td>-32,768 - 32,767</td>
+<td><code>-32,768 - 32,767</code></td>
 </tr>
 <tr>
 <td><code>long</code></td>
 <td>igual que <code>int</code> pero soporta mayores cantidades</td>
-<td>2,147,483,648 - 2,147,483,647</td>
+<td><code>2,147,483,648 - 2,147,483,647</code></td>
 </tr>
 <tr>
 <td><code>double/float</code></td>
-<td></td>
-<td></td>
+<td>se usan para guardar numeros decimales y al mismo tiempo puede usar una cantidad aun mas grande que un <code>long</code></td>
+<td><code>8.5, -230.45687</code></td>
+</tr>
+<tr>
+<td><code>char</code></td>
+<td>Guarda caracteres alfanumericos y simbolos</td>
+<td><code>a, A, b, z, 0...9, @, #, $, %</code></td>
 </tr>
 <tr>
 <td><code>String</code></td>
-<td>[plugins/onedrive/README.md][PlOd]</td>
-<td></td>
+<td>Guarda grupos de caracteres como si fuera una lista: palabras u oraciones enteras</td>
+<td><code>"hola"</code>, <code>"Hola Mundo"</code></td>
 </tr>
 </tbody>
 </table>
+<h2 id="sintaxis">Sintaxis</h2>
+<p>Todos los tipos de variables se pueden usar de dos maneras:</p>
+<ul>
+<li>Creando una variable con un valor inicial</li>
+</ul>
+<pre><code class="language-c++">int mi_variable = 1234
+String palabra = &quot;asdfghjkl&quot;
+String oracion = &quot;Hay una casa en la pradera.&quot;
+float temperatura = 25.9
+</code></pre>
+<ul>
+<li>Declarando solo la variable, usar un valor inicial no es necesario</li>
+</ul>
+<pre><code class="language-c++">int algo;
+double altura;
+String fecha;
+</code></pre>
+<h2 id="algunos-detalles">Algunos detalles</h2>
+<h3 id="float-double"><code>float</code> / <code>double</code></h3>
+<p>Por lasa capacidades limitadas del Arduino <code>float</code> y <code>double</code> funcionan de la misma manera float solo permite ocupar de 6 a 7 numeros en total, si se usaran mas numeros, la variable va a descartar los numeros que tenga en exceso</p>
 
               
             </article>
