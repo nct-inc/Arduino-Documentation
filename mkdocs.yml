@@ -3,16 +3,23 @@ theme:
   name: material
   language: es
   palette:
-    # Palette toggle for light mode
-
-    # Palette toggle for dark mode
     - scheme: slate
-#      toggle:
-#        icon: material/brightness-4
-#        name: Switch to light mode
+
+  features:
+    - navigation.instant
+    - navigation.tracking
+
 markdown_extensions:
   - pymdownx.arithmatex:
       generic: true
+
+nav:
+  - index.md
+  - Introduccion:
+    - Introduccion/Variables.md
+    - Introduccion/Funciones.md
+    - Introduccion/Bucles de Control.md
+    - Introduccion/Sketches Basicos.md
 
 extra_javascript:
   - javascripts/mathjax.js
