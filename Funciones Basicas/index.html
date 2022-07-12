@@ -63,6 +63,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#funciones-basicas" class="md-skip">
+          Saltar a contenido
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -424,10 +429,71 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Funciones Basicas
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         Funciones Basicas
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pinmode" class="md-nav__link">
+    pinMode
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#digitalread" class="md-nav__link">
+    digitalRead
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#analogread" class="md-nav__link">
+    analogRead
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#digitalwrite" class="md-nav__link">
+    digitalWrite
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#analogwrite" class="md-nav__link">
+    analogWrite
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -780,6 +846,51 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pinmode" class="md-nav__link">
+    pinMode
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#digitalread" class="md-nav__link">
+    digitalRead
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#analogread" class="md-nav__link">
+    analogRead
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#digitalwrite" class="md-nav__link">
+    digitalWrite
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#analogwrite" class="md-nav__link">
+    analogWrite
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -793,9 +904,84 @@
                 
 
 
-  <h1>Funciones Basicas</h1>
-
-
+<h1 id="funciones-basicas">Funciones Basicas</h1>
+<p>El arduino se puede operar de manera sencilla usando funciones predefinidas en el IDE</p>
+<h2 id="pinmode"><code>pinMode</code></h2>
+<p>Esta funcion especifica de que modo se va a utilizar un pueto en el arduino, pide 2 parametros
+| Parametro | Valores |
+| ------ | ------ |
+| <code>pin</code> | El pin a configurar |
+| <code>modo</code> | en que modo se configurara, si como salida(<code>OUTPUT</code>) o entrada(<code>INPUT</code>) |
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">// se configura el pin 6 como una salida</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nf">pinMode</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="kr">OUTPUT</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1">// se configura el 2 como una entrada</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="nf">pinMode</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="kr">INPUT</span><span class="p">);</span><span class="w"></span>
+</code></pre></div></p>
+<h2 id="digitalread"><code>digitalRead</code></h2>
+<p>Esta funcion obtiene un valor digital de la señal que le llega al numero de puerto especificado, este valor es un <code>HIGH</code>(un 1 digital) o <code>LOW</code> (un 0). Se puede pasar este valor a un <code>int</code> tnto como a un <code>boolean</code>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">// se lee el valor en el pin 3</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kr">int</span><span class="w"> </span><span class="n">valor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">digitalRead</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="w"></span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c1">// se puede pasar este valor tambien a un boolean</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="kr">bool</span><span class="w"> </span><span class="n">abierto</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">digitalRead</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="w"></span>
+</code></pre></div></p>
+<h2 id="analogread"><code>analogRead</code></h2>
+<p><code>analogRead</code> obtiene el valor analogico que llega a un puerto, en otra palabras, mide el voltaje que esta llegando a este puerto. el puerto tiene una resolucion de 10 bits, lo que quiere decir que esta funcion otorga un valor entre 0 y 1024 segun el voltaje de llegada.</p>
+<p>Esta funcion solo se puede usar en los pies marcados con <code>ANALOG</code> en la placa
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1">// se lee el valor de pin A0 y se pasa este al entero &quot;valor&quot;</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kr">int</span><span class="w"> </span><span class="n">valor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">analogRead</span><span class="p">(</span><span class="n">A0</span><span class="p">);</span><span class="w"></span>
+</code></pre></div></p>
+<h2 id="digitalwrite"><code>digitalWrite</code></h2>
+<p>Esta funcion escribe un valor digital de <code>HIGH</code> o <code>LOW</code> al puerto que se especifique</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valores</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pin</code></td>
+<td>El pin a configurar</td>
+</tr>
+<tr>
+<td><code>salida</code></td>
+<td><code>HIGH</code> o <code>LOW</code></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1">// se encendera el led que esta en el pin 13 del arduino</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nf">digitalWrite</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span><span class="w"> </span><span class="kr">HIGH</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="c1">// se espera 1 segundo</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="nf">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="c1">// y luego se apaga el led</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="nf">digitalWrite</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span><span class="w"> </span><span class="kr">LOW</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+<h2 id="analogwrite"><code>analogWrite</code></h2>
+<p>Escribe un valor analogico al pin especificado usando PWM, a diferencia de <code>analogRead</code> que se puede usar en los pines marcados como analogicos, <code>analogWrite</code> se puede usar en todos los pines que estan marcados con salida PWM(<code>~</code>).</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valores</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pin</code></td>
+<td>El pin a configurar</td>
+</tr>
+<tr>
+<td><code>salida</code></td>
+<td>0 (cero actividad) - 255 (completamente encendido)</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1">// se utliza un led RGB y se le imprime un color en especifico</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nf">analogWrite</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="mi">128</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="nf">analogWrite</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="nf">analogWrite</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span><span class="w"> </span><span class="mi">255</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
 
               
             </article>
