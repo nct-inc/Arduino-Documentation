@@ -373,6 +373,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#ejemplo-2_1" class="md-nav__link">
+    Ejemplo 2
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -536,6 +543,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#ejemplo-2_1" class="md-nav__link">
+    Ejemplo 2
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -638,7 +652,31 @@
 <a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">    </span><span class="nf">digitalWrite</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="kr">LOW</span><span class="p">);</span><span class="w"> </span><span class="c1">// apagamos led en el pin 7</span>
 <a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="p">}</span><span class="w"></span>
 </code></pre></div>
-en algunas ocasiones se puede incluir un <code>else</code> solo al final que se ejecutara si es que ninguno de los <code>if</code>'s anteriores resutlaron verdaderos:</p>
+en algunas ocasiones se puede incluir un <code>else</code> al final que se ejecutara si es que ninguno de los <code>if</code>'s anteriores resultaron verdaderos:</p>
+<h4 id="ejemplo-2_1">Ejemplo 2</h4>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="cm">/*  imaginemos dos botones, uno en el pin 2 y</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="cm">    otro em el pin 3, y dos lEDs, uno en el pin</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="cm">    7 y otro en el pin 8</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="cm">*/</span><span class="w"></span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="c1">// si presionamos el boton en el pin 2</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="k">if</span><span class="p">(</span><span class="nf">digitalRead</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kr">HIGH</span><span class="p">)</span><span class="w"></span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">    </span><span class="nf">digitalWrite</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="kr">HIGH</span><span class="p">);</span><span class="w"> </span><span class="c1">// encendemos un led en el pin 7</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="c1">// si el boton 2 no esta presionado, procedemos a ver si el pin 3 esta presionado</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nf">digitalRead</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kr">HIGH</span><span class="p">)</span><span class="w"></span>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="w">    </span><span class="nf">digitalWrite</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="kr">HIGH</span><span class="p">);</span><span class="w"> </span><span class="c1">// encendemos otro en el pin 8</span>
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="c1">// finalmente si ninguno de los botones esta presionado</span>
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="k">else</span><span class="w"></span>
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="w">    </span><span class="c1">// apagamos todos los LEDs</span>
+<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a><span class="w">    </span><span class="nf">digitalWrite</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="kr">LOW</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a><span class="w">    </span><span class="nf">digitalWrite</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="kr">LOW</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<img alt="" src="../images/if_else_else.png" /></p>
 <h2 id="for"><code>for</code></h2>
 <p>el ciclo <code>for</code> se utiliza para repetir partes de codigo un determinado numero de veces, para funcionar, necesita 3 partes en este orden:</p>
 <ul>
