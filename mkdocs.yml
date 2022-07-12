@@ -4,7 +4,6 @@ theme:
   language: es
   palette:
     - scheme: slate
-
   features:
     - navigation.instant
     - navigation.tracking
@@ -22,16 +21,20 @@ markdown_extensions:
 nav:
   - index.md
   - Fundamentos:
+    - Electronica:
+      - Corriente DC y AC.md
+      - Señales.md
     - Lenguaje:
       - Variables.md
       - Funciones.md
       - Bucles de Control.md
       - Programacion OOP.md
     - Arduino:
+      - Esquema Fisico.md
       - Funciones Basicas.md
   - Perifericos:
-    - TTL(Digital):
-      - TTL/Definicion.md
+    - Digital:
+      - Digital/Definicion.md
     - Analogicos:
       - Analog/Definicion.md
     - PWM:

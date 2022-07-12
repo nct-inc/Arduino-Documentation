@@ -1,4 +1,7 @@
 # Bucles de Control
+Los bucles de control permiten redirigir el flujo de un programa bajo ciertas condiciones.
+
+Para entender mejor esta seccion, vease [Funciones Basicas en Arduino](Funciones%20Basicas.md)
 ## Bucles propios del arduino
 Arduino tiene en todos los proyectos dos funciones que funcionan a modo de bucles de control, si estos no estan presentes en el programa, el IDE se rehusara a compilarlo.
 
@@ -138,10 +141,91 @@ else
 ## `for`
 el ciclo `for` se utiliza para repetir partes de codigo un determinado numero de veces, para funcionar, necesita 3 partes en este orden:
 
-- **Una variable de control**, la cual se ocupa por lo general cuantas veces se repetira el ciclo
+- **Una variable de control**, la cual se ocupa por lo general para controlar cuantas veces se repetira el ciclo, comunmente se suele usar un entero llamado `i`.
 - **Una condicion de salida**, el ciclo continuara ejecutandose hasta que la condicion de salida ya no se cumpla
 - **Un parametro de incremento**, cada que se termine de ejecutar el bucle este parametro incrementara o configurara la variable de control
 
-## `while`
+#### Ejemplo 1
+```arduino
+/*  se tienen 4 leds en fila desde el pin 4, 
+    hasta el pin 7, este ciclo for
+    los enciende en secuencia
+*/
+for (int i = 4, i < 8, i++) {
+    /*  dentro del bucle se puede 
+        usar la variable "i"
+        para automatizar tareas,
+        en este caso se usara para 
+        designar el pin del led al que
+        se mandara una salida
+    */
+    digitalWrite(i, HIGH);
+    // 1 segundo de espera
+    delay(1000);
+    /*  al salir del bucle se
+        ejecuta el parametro
+        de incremento, en este
+        caso, la variable "i"
+        se incrementa en 1
+    */
+}
+```
 
+## `while`
+el ciclo `while` ejecutara una parte de codigo de manera indefinida hasta que determinada condicion de salida se cumpla
+
+#### Ejemplo 1
+```arduino
+/*  se tiene un boton en el pin 2
+    y unled en el pin 5, mientras
+    el boton este presionado el
+    LED seguira encendido,
+*/
+while(digitalRead(2) == HIGH)
+{
+    digitalWrite(5,HIGH);
+}
+/*  al salir del bucle, el
+    led se apagara
+*/
+digitalWrite(5, LOW);
+```
+
+![](images/while.png)
 ## `switch`
+Bastante similar al `if`, `switch` controla que porciones de codigo se pueden ejecutar segun una condicion. La diferencia es que switch solo admite caracteres `char` y numeros enteros `int`
+
+#### Ejemplo 1
+```arduino
+/*  Se tiene un auto a control remoto
+    y esta es la funcion de control,
+    para controlar la direccion usa 
+    un char que llega de la conexion 
+    bluetooth.
+
+    El auto tiene librerias 
+    preconfiguradas para avanzar,
+    retroceder, etc.
+*/
+
+char direccion = Serial.read();
+switch (direccion) {
+    case 'd':
+        avanzar();
+    break;
+    case 'r':
+        retroceder();
+    break;
+    case 'i':
+        girar_izquierda();
+    break;
+    case 'd':
+        girar_derecha();
+    break;
+    default:
+        detener();
+    break;
+}
+```
+
+![](images/switch.png)
