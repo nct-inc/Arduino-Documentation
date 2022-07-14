@@ -14,9 +14,14 @@ markdown_extensions:
       generic: true
   - pymdownx.highlight:
       anchor_linenums: true
+  - pymdownx.tabbed:
+      alternate_style: true 
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.superfences
+  - attr_list
+  - md_in_html
+
 
 nav:
   - index.md
@@ -35,10 +40,15 @@ nav:
   - Perifericos:
     - Digital:
       - Digital/Definicion.md
+      - Digital/LED.md
+      - Digital/Boton.md
     - Analogicos:
       - Analog/Definicion.md
+      - Analog/Potenciometro.md
     - PWM:
       - PWM/Definicion.md
+      - PWM/Servomotor.md
+      - PWM/Puentes H.md
     - Serial:
       - Serial/Definicion.md
     - I2C:
