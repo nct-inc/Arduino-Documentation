@@ -999,7 +999,7 @@
 </div>
 </div>
 <h3 id="ejemplo-aceleracion">Ejemplo: Aceleracion</h3>
-<p>Mismo esquematico del ejemplo anterior, la diferencia es que el motor va acelerando y decelerando</p>
+<p><a href="#ejemplo-giro">Mismo esquematico del ejemplo anterior</a>, la diferencia es que el motor va acelerando y decelerando</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Setup</label><label for="__tabbed_2_2">Loop</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -1088,6 +1088,7 @@
 </div>
 <h2 id="uso-con-funciones">Uso con Funciones</h2>
 <h3 id="ejemplo-funcion-motorl298">Ejemplo: Funcion <code>motorl298</code></h3>
+<p>Usando <a href="#ejemplo-giro">el primer Esquematico</a>:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="5:3"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><input id="__tabbed_5_3" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">Variables</label><label for="__tabbed_5_2">Setup</label><label for="__tabbed_5_3">Loop</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -1136,31 +1137,95 @@
 </div>
 </div>
 <h4 id="ejemplo-objeto-l298nh">Ejemplo: Objeto <code>l298n.h</code></h4>
-<p>Usando el primer sketch:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="6:3"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><input id="__tabbed_6_3" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1"><code>l298.h</code></label><label for="__tabbed_6_2"><code>l298.cpp</code></label><label for="__tabbed_6_3">Sketch</label></div>
+<p>Usando <a href="#ejemplo-giro">el primer sketch</a>:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:1"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1"><code>l298.h</code></label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="kr">int</span><span class="w"> </span><span class="n">velocidad</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">128</span><span class="p">;</span><span class="w"></span>
-</code></pre></div>
+<p>```arduino</p>
 </div>
+</div>
+</div>
+<h1 id="ifndef-l298_h">ifndef L298_H</h1>
+<h1 id="define-l298_h">define L298_H</h1>
+<h1 id="include">include <Arduino.h></h1>
+<p>class l298 {
+  private:
+    int enable_pin;
+    int in1_pin;
+    int in2_pin;
+  public:
+    l298(int enable_pin, int in1, int in2);
+    void habilitar();</p>
+<div class="highlight"><pre><span></span><code>void avanzar(int velocidad);
+void retroceder(int velocidad);
+void detener();
+</code></pre></div>
+<p>};</p>
+<h1 id="endif">endif</h1>
+<div class="highlight"><pre><span></span><code>```
+</code></pre></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="7:1"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1"><code>l298.cpp</code></label></div>
+<div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="kr">void</span><span class="w"> </span><span class="nb">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w">    </span><span class="nf">pinMode</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="kr">OUTPUT</span><span class="p">);</span><span class="w"></span>
-<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">    </span><span class="nf">pinMode</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="kr">OUTPUT</span><span class="p">);</span><span class="w"> </span>
-<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="w">    </span><span class="nf">pinMode</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="kr">OUTPUT</span><span class="p">);</span><span class="w"> </span>
-<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="p">}</span><span class="w"></span>
-</code></pre></div>
+<p>```arduino</p>
 </div>
+</div>
+</div>
+<h1 id="include-l298h">include "l298.h"</h1>
+<p>l298::l298(int enable_pin, int in1, int in2) {
+  this -&gt; enable_pin = enable_pin;
+  this -&gt; in1_pin = in1;
+  this -&gt; in2_pin = in2;
+}</p>
+<p>void l298::habilitar() {
+  pinMode(enable_pin, OUTPUT);
+  pinMode(in1_pin, OUTPUT);
+  pinMode(in2_pin, OUTPUT);
+}</p>
+<p>void l298::avanzar(int velocidad) {
+  digitalWrite(in1_pin, HIGH);
+  digitalWrite(in1_pin, LOW);
+  analogWrite(enable_pin, velocidad);
+}</p>
+<p>void l298::retroceder(int velocidad) {
+  digitalWrite(in1_pin, LOW);
+  digitalWrite(in1_pin, HIGH);
+  analogWrite(enable_pin, velocidad);
+}</p>
+<p>void l298::detener() {
+  digitalWrite(in1_pin, LOW);
+  digitalWrite(in1_pin, LOW);
+  analogWrite(enable_pin, 0);
+}</p>
+<div class="highlight"><pre><span></span><code>```
+</code></pre></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="8:1"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><div class="tabbed-labels"><label for="__tabbed_8_1">Sketch</label></div>
+<div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="kr">void</span><span class="w"> </span><span class="nb">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="w">    </span><span class="nf">analogWrite</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="n">velocidad</span><span class="p">);</span><span class="w"></span>
-<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="w">    </span><span class="nf">digitalWrite</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="kr">HIGH</span><span class="p">);</span><span class="w"></span>
-<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="w">    </span><span class="nf">digitalWrite</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="kr">LOW</span><span class="p">);</span><span class="w"></span>
-<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="p">}</span><span class="w"></span>
-</code></pre></div>
+<p>```arduino</p>
 </div>
 </div>
 </div>
+<h1 id="include-l298h_1">include "l298.h"</h1>
+<p>l298 motor_de_juguete(3, 4, 5);</p>
+<p>void setup() {
+  motor_de_juguete.habilitar();
+}</p>
+<p>void loop() {
+  for (int i = 0; i &lt; 256; i++) {
+    motor_de_juguete.avanzar(i);
+    delay(50);
+  }</p>
+<p>motor_de_juguete.detener();
+  delay(1000);</p>
+<p>for (int i = 255; i &gt; 0; i++) {
+    motor_de_juguete.retroceder(i);
+    delay(50);
+  }</p>
+<p>motor_de_juguete.detener();
+  delay(1000);
+}
+    ```</p>
 
               
             </article>
