@@ -434,7 +434,7 @@
   
     <li class="md-nav__item">
       <a href="../../Programacion%20OOP/" class="md-nav__link">
-        Programacion OOP
+        Programacion Orientada a Objetos
       </a>
     </li>
   
@@ -955,8 +955,16 @@
 <li>A4988 y similares</li>
 </ul>
 <h1 id="l293-y-l298">L293 y L298</h1>
-<p>estos son de bajo costo y manejan ambos 2 motores como maximo</p>
-<h2 id="esquematico">Esquematico</h2>
+<p>estos puentes h son de bajo costo, controlan 2 motores como maximo y se conectan de manera similar</p>
+<p><img alt="" src="../../images/L298%20Schematic.svg" /></p>
+<h3 id="control">Control</h3>
+<p>Para cada motor se tiene un juego de 3 pines:
+- <strong>Enable</strong>, marcado como <code>ENA, ENB</code>, estos pines controlan la velocidad de cada motor segun el voltaje de entrada, a 0V el motor se detiene por completo, a 5V el motor avanza a la velocidad maxima.
+- <strong>Pines de entrada</strong>, Estos pines definen el sentido de la corriente en el motor, <code>IN1</code> corrsponde a <code>OUT1</code>, <code>IN2</code> corrsponde a <code>OUT2</code> y asi sucesivamente. Cada par de entradas corrsponde a un solo motor. </p>
+<h3 id="voltaje">Voltaje</h3>
+<p>en la placa hay un jumper que controla un regulador de 5V y se puede usar de dos modos:
+- Cuando el voltaje que se va a usar es menor a 12V, se introduce este voltaje por los pines de <code>12V</code> y <code>GND</code>, <strong>con el jumper puesto se puede usar la entrada de <code>5V</code> como una salida de voltaje para alimentar otros elemenos</strong>, como el Arduino
+- Cuando el voltaje que se va a usar es mayor a 12V, se introduce este voltaje por los pines de 12V y GND, <strong>el jumper se debe remover para desactivar el regulador, y se debe introducir por la entrada de 5V otro voltaje para alimentar el <code>L298</code></strong>.</p>
 <h2 id="codigo">Codigo</h2>
 <h3 id="uso-basico">Uso Basico</h3>
 <h4 id="ejemplo-giro">Ejemplo: Giro</h4>
