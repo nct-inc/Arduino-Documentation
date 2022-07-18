@@ -1138,94 +1138,91 @@
 </div>
 <h4 id="ejemplo-objeto-l298nh">Ejemplo: Objeto <code>l298n.h</code></h4>
 <p>Usando <a href="#ejemplo-giro">el primer sketch</a>:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="6:1"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1"><code>l298.h</code></label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:3"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><input id="__tabbed_6_3" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1"><code>l298.h</code></label><label for="__tabbed_6_2"><code>l298.cpp</code></label><label for="__tabbed_6_3">Sketch</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p>```arduino</p>
-</div>
-</div>
-</div>
-<h1 id="ifndef-l298_h">ifndef L298_H</h1>
-<h1 id="define-l298_h">define L298_H</h1>
-<h1 id="include">include <Arduino.h></h1>
-<p>class l298 {
-  private:
-    int enable_pin;
-    int in1_pin;
-    int in2_pin;
-  public:
-    l298(int enable_pin, int in1, int in2);
-    void habilitar();</p>
-<div class="highlight"><pre><span></span><code>void avanzar(int velocidad);
-void retroceder(int velocidad);
-void detener();
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="cp">#ifndef L298_H</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="cp">#define L298_H</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;Arduino.h&gt;</span><span class="cp"></span>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="kr">class</span><span class="w"> </span><span class="nc">l298</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="kr">private</span><span class="o">:</span><span class="w"></span>
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="w">    </span><span class="kr">int</span><span class="w"> </span><span class="n">enable_pin</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="w">    </span><span class="kr">int</span><span class="w"> </span><span class="n">in1_pin</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a><span class="w">    </span><span class="kr">int</span><span class="w"> </span><span class="n">in2_pin</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a><span class="kr">public</span><span class="o">:</span><span class="w"></span>
+<a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a><span class="w">    </span><span class="n">l298</span><span class="p">(</span><span class="kr">int</span><span class="w"> </span><span class="n">enable_pin</span><span class="p">,</span><span class="w"> </span><span class="kr">int</span><span class="w"> </span><span class="n">in1</span><span class="p">,</span><span class="w"> </span><span class="kr">int</span><span class="w"> </span><span class="n">in2</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a><span class="w">    </span><span class="kr">void</span><span class="w"> </span><span class="nf">habilitar</span><span class="p">();</span><span class="w"></span>
+<a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a>
+<a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a><span class="w">    </span><span class="kr">void</span><span class="w"> </span><span class="nf">avanzar</span><span class="p">(</span><span class="kr">int</span><span class="w"> </span><span class="n">velocidad</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a><span class="w">    </span><span class="kr">void</span><span class="w"> </span><span class="nf">retroceder</span><span class="p">(</span><span class="kr">int</span><span class="w"> </span><span class="n">velocidad</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a><span class="w">    </span><span class="kr">void</span><span class="w"> </span><span class="nf">detener</span><span class="p">();</span><span class="w"></span>
+<a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a><span class="p">};</span><span class="w"></span>
+<a id="__codelineno-14-17" name="__codelineno-14-17" href="#__codelineno-14-17"></a><span class="cp">#endif</span>
 </code></pre></div>
-<p>};</p>
-<h1 id="endif">endif</h1>
-<div class="highlight"><pre><span></span><code>```
-</code></pre></div>
-<div class="tabbed-set tabbed-alternate" data-tabs="7:1"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1"><code>l298.cpp</code></label></div>
-<div class="tabbed-content">
+</div>
 <div class="tabbed-block">
-<p>```arduino</p>
-</div>
-</div>
-</div>
-<h1 id="include-l298h">include "l298.h"</h1>
-<p>l298::l298(int enable_pin, int in1, int in2) {
-  this -&gt; enable_pin = enable_pin;
-  this -&gt; in1_pin = in1;
-  this -&gt; in2_pin = in2;
-}</p>
-<p>void l298::habilitar() {
-  pinMode(enable_pin, OUTPUT);
-  pinMode(in1_pin, OUTPUT);
-  pinMode(in2_pin, OUTPUT);
-}</p>
-<p>void l298::avanzar(int velocidad) {
-  digitalWrite(in1_pin, HIGH);
-  digitalWrite(in1_pin, LOW);
-  analogWrite(enable_pin, velocidad);
-}</p>
-<p>void l298::retroceder(int velocidad) {
-  digitalWrite(in1_pin, LOW);
-  digitalWrite(in1_pin, HIGH);
-  analogWrite(enable_pin, velocidad);
-}</p>
-<p>void l298::detener() {
-  digitalWrite(in1_pin, LOW);
-  digitalWrite(in1_pin, LOW);
-  analogWrite(enable_pin, 0);
-}</p>
-<div class="highlight"><pre><span></span><code>```
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;l298.h&quot;</span><span class="cp"></span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="n">l298</span><span class="o">::</span><span class="n">l298</span><span class="p">(</span><span class="kr">int</span><span class="w"> </span><span class="n">enable_pin</span><span class="p">,</span><span class="w"> </span><span class="kr">int</span><span class="w"> </span><span class="n">in1</span><span class="p">,</span><span class="w"> </span><span class="kr">int</span><span class="w"> </span><span class="n">in2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="n">this</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">enable_pin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">enable_pin</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="n">this</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">in1_pin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">in1</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="n">this</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">in2_pin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">in2</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>
+<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span class="kr">void</span><span class="w"> </span><span class="n">l298</span><span class="o">::</span><span class="n">habilitar</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a><span class="nf">pinMode</span><span class="p">(</span><span class="n">enable_pin</span><span class="p">,</span><span class="w"> </span><span class="kr">OUTPUT</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a><span class="nf">pinMode</span><span class="p">(</span><span class="n">in1_pin</span><span class="p">,</span><span class="w"> </span><span class="kr">OUTPUT</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a><span class="nf">pinMode</span><span class="p">(</span><span class="n">in2_pin</span><span class="p">,</span><span class="w"> </span><span class="kr">OUTPUT</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a>
+<a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a><span class="kr">void</span><span class="w"> </span><span class="n">l298</span><span class="o">::</span><span class="n">avanzar</span><span class="p">(</span><span class="kr">int</span><span class="w"> </span><span class="n">velocidad</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-15-15" name="__codelineno-15-15" href="#__codelineno-15-15"></a><span class="nf">digitalWrite</span><span class="p">(</span><span class="n">in1_pin</span><span class="p">,</span><span class="w"> </span><span class="kr">HIGH</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-15-16" name="__codelineno-15-16" href="#__codelineno-15-16"></a><span class="nf">digitalWrite</span><span class="p">(</span><span class="n">in1_pin</span><span class="p">,</span><span class="w"> </span><span class="kr">LOW</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-15-17" name="__codelineno-15-17" href="#__codelineno-15-17"></a><span class="nf">analogWrite</span><span class="p">(</span><span class="n">enable_pin</span><span class="p">,</span><span class="w"> </span><span class="n">velocidad</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-15-18" name="__codelineno-15-18" href="#__codelineno-15-18"></a><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-15-19" name="__codelineno-15-19" href="#__codelineno-15-19"></a>
+<a id="__codelineno-15-20" name="__codelineno-15-20" href="#__codelineno-15-20"></a><span class="kr">void</span><span class="w"> </span><span class="n">l298</span><span class="o">::</span><span class="n">retroceder</span><span class="p">(</span><span class="kr">int</span><span class="w"> </span><span class="n">velocidad</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-15-21" name="__codelineno-15-21" href="#__codelineno-15-21"></a><span class="nf">digitalWrite</span><span class="p">(</span><span class="n">in1_pin</span><span class="p">,</span><span class="w"> </span><span class="kr">LOW</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-15-22" name="__codelineno-15-22" href="#__codelineno-15-22"></a><span class="nf">digitalWrite</span><span class="p">(</span><span class="n">in1_pin</span><span class="p">,</span><span class="w"> </span><span class="kr">HIGH</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-15-23" name="__codelineno-15-23" href="#__codelineno-15-23"></a><span class="nf">analogWrite</span><span class="p">(</span><span class="n">enable_pin</span><span class="p">,</span><span class="w"> </span><span class="n">velocidad</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-15-24" name="__codelineno-15-24" href="#__codelineno-15-24"></a><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-15-25" name="__codelineno-15-25" href="#__codelineno-15-25"></a>
+<a id="__codelineno-15-26" name="__codelineno-15-26" href="#__codelineno-15-26"></a><span class="kr">void</span><span class="w"> </span><span class="n">l298</span><span class="o">::</span><span class="n">detener</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-15-27" name="__codelineno-15-27" href="#__codelineno-15-27"></a><span class="nf">digitalWrite</span><span class="p">(</span><span class="n">in1_pin</span><span class="p">,</span><span class="w"> </span><span class="kr">LOW</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-15-28" name="__codelineno-15-28" href="#__codelineno-15-28"></a><span class="nf">digitalWrite</span><span class="p">(</span><span class="n">in1_pin</span><span class="p">,</span><span class="w"> </span><span class="kr">LOW</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-15-29" name="__codelineno-15-29" href="#__codelineno-15-29"></a><span class="nf">analogWrite</span><span class="p">(</span><span class="n">enable_pin</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-15-30" name="__codelineno-15-30" href="#__codelineno-15-30"></a><span class="p">}</span><span class="w"></span>
 </code></pre></div>
-<div class="tabbed-set tabbed-alternate" data-tabs="8:1"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><div class="tabbed-labels"><label for="__tabbed_8_1">Sketch</label></div>
-<div class="tabbed-content">
+</div>
 <div class="tabbed-block">
-<p>```arduino</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;l298.h&quot;</span><span class="cp"></span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="n">l298</span><span class="w"> </span><span class="nf">motor_de_juguete</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="kr">void</span><span class="w"> </span><span class="nb">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="n">motor_de_juguete</span><span class="p">.</span><span class="n">habilitar</span><span class="p">();</span><span class="w"></span>
+<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a>
+<a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a><span class="kr">void</span><span class="w"> </span><span class="nb">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kr">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">256</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a><span class="w">    </span><span class="n">motor_de_juguete</span><span class="p">.</span><span class="n">avanzar</span><span class="p">(</span><span class="n">i</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a><span class="w">    </span><span class="nf">delay</span><span class="p">(</span><span class="mi">50</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-16-14" name="__codelineno-16-14" href="#__codelineno-16-14"></a>
+<a id="__codelineno-16-15" name="__codelineno-16-15" href="#__codelineno-16-15"></a><span class="n">motor_de_juguete</span><span class="p">.</span><span class="n">detener</span><span class="p">();</span><span class="w"></span>
+<a id="__codelineno-16-16" name="__codelineno-16-16" href="#__codelineno-16-16"></a><span class="nf">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-16-17" name="__codelineno-16-17" href="#__codelineno-16-17"></a>
+<a id="__codelineno-16-18" name="__codelineno-16-18" href="#__codelineno-16-18"></a><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kr">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">255</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-16-19" name="__codelineno-16-19" href="#__codelineno-16-19"></a><span class="w">    </span><span class="n">motor_de_juguete</span><span class="p">.</span><span class="n">retroceder</span><span class="p">(</span><span class="n">i</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-16-20" name="__codelineno-16-20" href="#__codelineno-16-20"></a><span class="w">    </span><span class="nf">delay</span><span class="p">(</span><span class="mi">50</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-16-21" name="__codelineno-16-21" href="#__codelineno-16-21"></a><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-16-22" name="__codelineno-16-22" href="#__codelineno-16-22"></a>
+<a id="__codelineno-16-23" name="__codelineno-16-23" href="#__codelineno-16-23"></a><span class="n">motor_de_juguete</span><span class="p">.</span><span class="n">detener</span><span class="p">();</span><span class="w"></span>
+<a id="__codelineno-16-24" name="__codelineno-16-24" href="#__codelineno-16-24"></a><span class="nf">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-16-25" name="__codelineno-16-25" href="#__codelineno-16-25"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div>
 </div>
 </div>
 </div>
-<h1 id="include-l298h_1">include "l298.h"</h1>
-<p>l298 motor_de_juguete(3, 4, 5);</p>
-<p>void setup() {
-  motor_de_juguete.habilitar();
-}</p>
-<p>void loop() {
-  for (int i = 0; i &lt; 256; i++) {
-    motor_de_juguete.avanzar(i);
-    delay(50);
-  }</p>
-<p>motor_de_juguete.detener();
-  delay(1000);</p>
-<p>for (int i = 255; i &gt; 0; i++) {
-    motor_de_juguete.retroceder(i);
-    delay(50);
-  }</p>
-<p>motor_de_juguete.detener();
-  delay(1000);
-}
-    ```</p>
 
               
             </article>
