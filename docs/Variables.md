@@ -2,7 +2,7 @@
 ## Definicion
 Las variables son espacios en memoria en los que se pueden guardar determinados tipos de datos.
 
-Estas son las variables mas usuales que se usan. La extension maxima de las variables aplica al arduino Uno o placas equivalentes (que lleven de CPU un `ATMEGA328-P`)
+Los tipos de variables mas utilizados son los siguientes:
 
 | Variable | Uso | Extension |
 | ------ | ------ | -------- |
@@ -11,6 +11,9 @@ Estas son las variables mas usuales que se usan. La extension maxima de las vari
 | `double/float` | se usan para guardar numeros decimales y al mismo tiempo puede usar una cantidad aun mas grande que un `long` | `8.5, -230.45687` |
 | `char` | Guarda caracteres alfanumericos y simbolos | `a, A, b, z, 0...9, @, #, $, %` |
 | `String` | Guarda grupos de caracteres como si fuera una lista: palabras u oraciones enteras | `"hola"`, `"Hola Mundo"`| 
+
+!!! info "Nota"
+    La extension maxima de las variables aplica al arduino Uno o placas equivalentes (que lleven de CPU un `ATMEGA328-P`)
 
 ## Sintaxis
 Todos los tipos de variables se pueden usar de dos maneras:
@@ -31,7 +34,6 @@ int algo;
 double altura;
 String fecha;
 ```
-## Algunos detalles
-### `float` / `double`
-- Por las capacidades limitadas del Arduino `float` y `double` funcionan de la misma manera.
-- `float` y `double` solo permiten ocupar de 6 a 7 numeros en total, si se usaran mas numeros, la variable va a descartar los numeros que tenga en exceso.
+!!! warning "Advertencia"
+    - Por las capacidades limitadas del Arduino `float` y `double` funcionan de la misma manera.
+    - `float` y `double` solo permiten ocupar de 6 a 7 numeros en total, si se usaran mas numeros, la variable va a descartar los numeros que tenga en exceso.

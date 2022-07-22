@@ -8,6 +8,8 @@ theme:
     - navigation.instant
     - navigation.tracking
     - navigation.tabs
+  font:
+    text: Jost
 
 markdown_extensions:
   - pymdownx.arithmatex:
@@ -21,6 +23,9 @@ markdown_extensions:
   - pymdownx.superfences
   - attr_list
   - md_in_html
+  - admonition
+  - pymdownx.details
+
 
 
 nav:
@@ -53,6 +58,7 @@ nav:
       - Serial/Definicion.md
     - I2C:
       - I2C/Definicion.md
+      - I2C/LCD 16x2.md
     - SPI:
       - SPI/Definicion.md
 

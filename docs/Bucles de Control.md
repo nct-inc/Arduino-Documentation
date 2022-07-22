@@ -1,9 +1,14 @@
 # Bucles de Control
 Los bucles de control permiten redirigir el flujo de un programa bajo ciertas condiciones.
 
-Para entender mejor esta seccion, vease [Funciones Basicas en Arduino](Funciones%20Basicas.md)
+!!! info "Informacion"
+    Para entender mejor esta seccion, vease [Funciones Basicas en Arduino](Funciones%20Basicas.md)
+    
 ## Bucles propios del arduino
-Arduino tiene en todos los proyectos dos funciones que funcionan a modo de bucles de control, si estos no estan presentes en el programa, el IDE se rehusara a compilarlo.
+Arduino tiene en todos los proyectos dos funciones que funcionan a modo de bucles de control, uno llamado `setup` y otro llamado `loop`
+
+!!! warning "Advertencia"
+    ambos bucles deben estar presentes en el sketch de arduino y no pueden repetirse, si faltaran o se repitieran el IDE se rehusara a compilar el sketch
 
 ```arduino
 /*  cuando se crea un sketch nuevo, asi 
